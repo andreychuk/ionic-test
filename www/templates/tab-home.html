@@ -1,0 +1,10 @@
+<ion-view view-title="Welcome">
+  <ion-content style="background: #e8ebf1;" class="padding">
+    <ion-item collection-repeat="item in items">
+      {{item.text}} </br>
+      <img ng-src="{{item.img}}" width="100%"
+           height="200px">
+    </ion-item>
+    <button ng-click="generate(items)">generate</button>
+  </ion-content>
+</ion-view>
