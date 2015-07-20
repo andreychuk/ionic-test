@@ -63,6 +63,38 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PushCtrl', function($http, $scope, $rootScope, $ionicPush, $ionicApp) {
+        $scope.tempates = [
+            {
+                'text' : 'text 1',
+                'img' : 'https://upload.wikimedia.org/wikipedia/commons/6/6a/Amerigo_vespucci_1976_nyc_aufgetakelt.jpg'
+            },
+            {
+                'text' : 'text 2',
+                'img' : 'https://upload.wikimedia.org/wikipedia/commons/6/6a/Amerigo_vespucci_1976_nyc_aufgetakelt.jpg'
+            },
+            {
+                'text' : 'text 3',
+                'img' : 'http://www.justdeath.com.ua/wp-content/uploads/2014/10/Scorpions.jpg'
+            },
+            {
+                'text' : 'text 4',
+                'img' : 'http://www.wired.com/wp-content/uploads/2014/09/iphone6-inline.jpg'
+            },
+            {
+                'text' : 'text 5',
+                'img' : 'http://www.lboro.ac.uk/media/wwwlboroacuk/external/content/research/sti/slide1.png'
+            }
+        ];
+        $scope.items = [];
+
+        $scope.generate = function() {
+            for (i = 0; i < 200; i++) {
+                angular.forEach($scope.tempates, function (item) {
+                    $scope.items.push(item);
+                });
+            }
+        };
+
   // Put your private API key here to be able to send push notifications from within the app.
   // TODO: Add your private API key here if you want to push from your device.
   $scope.privateKey = '';
